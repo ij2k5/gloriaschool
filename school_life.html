@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9265c174b0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="main.ico" />
+    <title>Gloria School</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            user-select: none;
+            max-width: 1920px;
+            align-items: center;
+        }
+        
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .con {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .con2 {
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .flex {
+            display: flex;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .top_bar {
+            height: 80px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            top: 0;
+            background-color: white;
+        }
+        
+        .h-full {
+            height: 100%;
+        }
+        
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .main_txt {
+            text-align: center;
+        }
+        
+        .top_bar > .con > .menu-1 > li:hover > .hovering {
+            font-weight: bolder;
+        }
+
+        .text {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .informing-texts {
+            margin-top: 3rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .informing-texts a {
+            color: black;
+            font-size: 30px;
+            font-weight: lighter;
+        }
+
+        #footer {
+            height: 15rem;
+        }
+
+        .row {
+            margin-top: 3rem;
+            display: flex;
+        }
+
+        .picture-box {
+            background-color: blueviolet;
+            border-radius: 50px;
+            transition: all .3s;
+            justify-content: center;
+        }
+
+        .text-box {
+            background-color: beige;
+            border-radius: 50px;
+            transition: all .3s;
+        }
+
+        .picture-box:hover {
+            padding: 10px;
+        }
+
+        .text-box:hover {
+            padding: 10px;
+        }
+
+        .row1p {height: 300px; width: 300px;}
+        .row1t {width: 590px; height: 300px;}
+
+        .row2p {height: 280px; width: 280px;}
+        .row2t {width: 610px; height: 280px;}
+
+        .row3p {height: 450px; width: 440px;}
+        .row3t {width: 440px; height: 440px;}
+    </style>
+</head>
+<body>
+    <header class="top_bar">
+        <div class="con flex h-full">
+            <ul class="menu-1 flex">
+                <li><a class="hovering px-4 flex h-full items-center menu-bar-lists" style="font-size: 20px;" onclick="history.back();"><i class="fa-solid fa-chevron-left"></i></a></li>
+                <li><a class="hovering px-4 flex h-full items-center menu-bar-lists" onclick="history.back();">Back</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>School Life</a>
+    </div>
+    <div class="row con2">
+        <div class="picture-box row1p"></div>
+        <div class="flex-grow"></div>
+        <div class="text-box row1t">
+            <a class="text">Text here</a>
+        </div>
+    </div>
+    <div class="row con2">
+        <div class="text-box row2t"></div>
+        <div class="flex-grow"></div>
+        <div class="picture-box row2p"></div>
+    </div>
+    <div class="row con2">
+        <div class="picture-box row3p"></div>
+        <div class="flex-grow"></div>
+        <div class="text-box row3t"></div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

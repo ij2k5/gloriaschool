@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9265c174b0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="main.ico" />
+    <title>Gloria School</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            user-select: none;
+            max-width: 1920px;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .con {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .con2 {
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        header {
+            height: 80px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            top: 0;
+            background-color: white;
+            position: fixed;
+            width: 100%;
+        }
+
+        .none {
+            opacity: 0;
+        }
+        
+        .h-full {
+            height: 100%;
+        }
+        
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .main_txt {
+            text-align: center;
+        }
+        
+        .top_bar > .con > .menu-1 > li:hover > .hovering {
+            font-weight: bolder;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        li {
+            list-style: none;
+        }
+
+        .nav-up {
+            transform: translate(0, -80px);
+            transition: .2s;
+        }
+
+        .nav-down {
+            transform: translate(0, 0);
+            transition: .2s;
+        }
+        
+        .informing-texts {
+            margin-top: 3rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .informing-texts a {
+            color: black;
+            font-size: 32px;
+            font-weight: lighter;
+        }
+
+        /* From here, for pictures and texts in yearbook */
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+
+        .gap-btwn-lines {
+            height: 6rem;
+        }
+
+        .one-line-three-object {
+            display: flex;
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .c-by-c {
+            text-align: center;
+        }
+
+        .c-by-c img {
+            max-width: 13rem;
+            max-height: 13rem;
+            width: 100%;
+        }
+
+        .c-by-c > div > a {
+            font-size: 16px;
+        }
+
+        footer {
+            height: 20rem;
+            background-color: #333333;
+            margin-top: 15rem;
+        }
+
+        .footer-contents {
+            display: flex;
+        }
+
+        .footer-title {
+            font-size: 20px;
+        }
+
+        .footer-line {
+            border-bottom: 2px solid rgb(255, 255, 255);
+        }
+
+        footer a {
+            color: white;
+            font-size: 15px;
+        }
+
+        .footer-img {
+            width: 10%;
+            height: 10%;
+        }
+
+        .footer-small-txt a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: small;
+            text-decoration: underline;
+        }
+
+        .sitemap-btn{
+            margin-left: 10px;
+        }
+
+        .gap-btwn-bottom {
+            height: 5rem;
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding-top: 30px;
+            }
+
+            header {
+                height: 60px;
+            }
+
+            .menu-1 a {
+                font-size: 16px;
+            }
+
+            .informing-texts a {
+                font-size: 24px;
+            }
+
+            .gap-btwn-lines {
+                height: 4rem;
+            }
+
+            .c-by-c > div > a {
+                font-size: 8px;
+            }
+
+            footer {
+                display: none;
+            }
+
+            .gap-btwn-bottom {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top_bar">
+        <div class="con flex h-full">
+            <ul class="menu-1 flex">
+                <li><a class="hovering px-4 flex h-full items-center menu-bar-lists" style="font-size: 20px;" href="index.html">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="hovering px-4 flex h-full items-center menu-bar-lists" onclick="history.back();">Back</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--Class One-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Class 1</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/SSndMD.jpg">
+                <div><a>Preonti Das</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/SZwJ3C.jpg">
+                <div><a>Nabila Rahman</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/8DxK4m.jpg">
+                <div><a>Humayara Mahmud Nusrat</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/vDOysT.jpg">
+                <div><a>Umme Mahabub Misti</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/m4cmfa.jpg">
+                <div><a>Mariam Mrittika</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/txKZLJ.jpg">
+                <div><a>Samiha Abedin</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/azFzZw.jpg">
+                <div><a>Md. Shahriar Rehan</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/gbNWV5.jpg">
+                <div><a>Projonmo Mrong</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/9QcTh7.jpg">
+                <div><a>Mohibul Hoque Saim</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Third line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/WnbtV5.jpg">
+                <div><a>Md. Jafor</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/qFCPR4.jpg">
+                <div><a>Mominul Islam Talha</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/gXNs5o.jpg">
+                <div><a>Raiyan Anjum Saad</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fourth line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/5Z0wWY.jpg">
+                <div><a>Sabit Ahmed Saad</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/MDCFag.jpg">
+                <div><a>Joyshree Halder</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/jnnQBh.jpg">
+                <div><a>Muttakin Islam</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fifth line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/lkQvkw.jpg">
+                <div><a>Dipto Das</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/g2R3mY.jpg">
+                <div><a>Muhammad Ullah Hamja</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/joPaox.jpg">
+                <div><a>Mohammad Nahid Hossain<br>Moaz</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sixth line - 'til here-->
+
+    <!--Class Two-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Class 2</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/43Ak6J.jpg">
+                <div><a>Muntasir Bin Elias</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/DAoT0H.jpg">
+                <div><a>Jakia Sultana</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/n5kQTT.jpg">
+                <div><a>Md. Mahin Khan</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/RY99fD.jpg">
+                <div><a>Echual Chakma</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/XLxFYQ.jpg">
+                <div><a>Yusuf Marjan</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/5cFhQg.jpg">
+                <div><a>Md. Mahin Talukder</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/fzmABl.jpg">
+                <div><a>Tamanna Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/sZHRv7.jpg">
+                <div><a>Marjiya Rahaman</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/CcaD0a.jpg">
+                <div><a>Fatema Islam</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Thrid line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/9lnOXB.jpg">
+                <div><a>Hiya Moni</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/53LlnC.jpg">
+                <div><a>Sharmin Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/WnKwsR.jpg">
+                <div><a>Afrin Islam</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fourth line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/scjpB5.jpg">
+                <div><a>Habiba Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/w3Pfos.jpg">
+                <div><a>Lamia Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/sBbNNF.jpg">
+                <div><a>Mominul Islam</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fifth line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/kp9nT9.jpg">
+                <div><a>Shoyon Pal</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/NmZdVz.jpg">
+                <div><a>Eismin Moriom Eiamin</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>text here</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sixth line - 'til here-->
+
+
+
+    <!--Class Three-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Class 3</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/5xfzoJ.jpg">
+                <div><a>Karima Akhter Nira</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/aHy0RQ.jpg">
+                <div><a>Sadikun Nahar Hafsa</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/S1qGcD.jpg">
+                <div><a>Sumaiya Akhter</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/ZaXFoR.jpg">
+                <div><a>Lamiya Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/l5R2yf.jpg">
+                <div><a>Md. Naim</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>text here</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here-->
+
+    <!--Class Four-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Class 4</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/GsodJt.jpg">
+                <div><a>Kotha Baroi</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/ycQvgY.jpg">
+                <div><a>Angsho Mankhin</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/YFdthy.jpg">
+                <div><a>Chanan Chakma</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/XMOtdF.jpg">
+                <div><a>Abdullah</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/4anmAr.jpg">
+                <div><a>Sumi Akhter</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/fQhaTf.jpg">
+                <div><a>Nadiya Akhter Mim</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here-->
+
+
+
+    <!--Class Five-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Class 5</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/SMLJoq.jpg">
+                <div><a>Bir Condro Tripura</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/fL8Jag.jpg">
+                <div><a>Dipannita Mondol</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/a4TZd4.jpg">
+                <div><a>Eakhtiar Ahmed Nabil</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/fKrMM3.jpg">
+                <div><a>Jannatul Mim</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/4rCgGx.jpg">
+                <div><a>Jisan Ahmed</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/0kQAO6.jpg">
+                <div><a>Monira Akhter</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here'-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/nAdqqw.jpg">
+                <div><a>Prohor Debnath</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>-</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>-</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Third line - 'til here'-->
+
+
+
+    <!--Graduating - from here-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Graduating Students</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/am81Yw.jpg">
+                <div><a>Bir Condro Tripura</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/B0LovD.jpg">
+                <div><a>Dipannita Mondol</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/DKwdQk.jpg">
+                <div><a>Eakhtiar Ahmed Nabil</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/h1KKAK.jpg">
+                <div><a>Jannatul Mim</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/HambPl.jpg">
+                <div><a>Jisan Ahmed</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/CV5xbR.jpg">
+                <div><a>Monira Akhter</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here'-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/B4W1Nm.jpg">
+                <div><a>Prohor Debnath</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>-</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>-</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Third line - 'til here'-->
+
+    <!--Teachers-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Teachers</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/J9ZR8w.jpg">
+                <div><a>Sadeka Hoque</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/PnDjy4.jpg">
+                <div><a>Morzina Khatun</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/jTLqQ2.jpg">
+                <div><a>Sandeep Murmu</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/RGP7xc.jpg">
+                <div><a>Shamsun Nahar</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/3SxgF2.jpg">
+                <div><a>Sagarika Hazra</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/OpRnl2.jpg">
+                <div><a>Monoj Gain</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second line - 'til here-->
+
+
+    <!--Staffs-->
+
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>Staffs</a>
+    </div>
+
+    <div class="gap-btwn-lines"></div> <!--Gap between lines-->
+
+    <div class="one-line-three-object">
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/M2CBbF.jpg">
+                <div><a>Mapuja Begun</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents">
+            <div class="c-by-c">
+                <img src="https://ifh.cc/g/MFOkJt.jpg">
+                <div><a>Khadija Begun</a></div>
+            </div>
+        </div>
+
+        <div class="flex-grow"></div> <!--Gap between objects-->
+
+        <div class="main_contents none">
+            <div class="c-by-c">
+                <img src="https://drive.google.com/uc?export=view&id=1wbHkWSGnvjgshLBRVdwvQiy74JKaylIl">
+                <div><a>-</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--First line - 'til here-->
+
+    <div class="gap-btwn-bottom"></div>
+
+    <!--footer from here-->
+    
+    <footer>
+        <div class="con">
+            <br>
+            <a class="footer-title">G L O R I AㅤS C H O O L</a>
+        </div>
+        <br>
+        <div class="footer-line"></div>
+        <div class="con footer-contents">
+            <div>
+                <br>
+                <br>
+                <a>35 Rajabari, Thana Road, Kamarpara, Turag, Dhaka-1230
+                    <br>
+                    TEL.+8801323723256
+                </a>
+            </div>
+            <div class="flex-grow"></div>
+            <img src="main.png" class="footer-img">
+        </div>
+        <div class="con footer-small-txt">
+            <a href="#">TOP</a><a class="sitemap-btn" href="sitemap.html">Sitemap</a>
+        </div>
+    </footer>
+</body>
+</html>

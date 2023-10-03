@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9265c174b0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="main.ico" />
+    <title>SORRY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            user-select: none;
+            max-width: 1920px;
+            align-items: center;
+        }
+        
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .con {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .con2 {
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .top_bar {
+            height: 80px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            top: 0;
+            background-color: white;
+        }
+        
+        .h-full {
+            height: 100%;
+        }
+        
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .main_txt {
+            text-align: center;
+        }
+        
+        .top_bar > .con > .menu-1 > li:hover > .hovering {
+            font-weight: bolder;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .informing-texts {
+            margin-top: 3rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .informing-texts a {
+            color: black;
+            font-size: 30px;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body>
+    <header class="top_bar">
+        <div class="con flex h-full">
+            <ul class="menu-1 flex">
+                <li><a class="hovering px-4 flex h-full items-center menu-bar-lists" style="font-size: 20px;" onclick="history.back();"><i class="fa-solid fa-caret-left"></i></a></li>
+                <li><a class="hovering px-4 flex h-full items-center menu-bar-lists" onclick="history.back();">Back</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="informing-texts con items-center" style="text-align: center; padding-top: 30px;">
+        <a>:(</a>
+    </div>
+    <div class="main_txt con2">
+        <a><br><br><br>
+            <b>Sorry</b><br>
+            THIS PAGE ISN'T READY YET
+        </a>
+    </div>
+</body>
+</html>

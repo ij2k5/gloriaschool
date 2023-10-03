@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloria School</title>
+    <link href="css/reset.css"  rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="main.ico" />
+    <script src="https://kit.fontawesome.com/04fee9afe6.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        // Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+    </script>
+</head>
+<body>
+<div class="body">
+    <header>
+        <img src="banner.png">
+    </header>
+
+    <div class="slidebox_m">
+        <div class="slidelist_m">
+            <img src="https://ifh.cc/g/Ht7xbm.jpg">
+            <img src="https://ifh.cc/g/cmyt5y.jpg">
+            <img src="https://ifh.cc/g/PsqCAa.jpg">
+            <img src="https://ifh.cc/g/sFQrHh.jpg">
+            <img src="https://ifh.cc/g/oB3Z2T.jpg">
+            <img src="https://ifh.cc/g/xpVc0C.jpg">
+            <img src="https://ifh.cc/g/3m84GJ.jpg">
+            <img src="https://ifh.cc/g/YLJ7pN.jpg">
+            <img src="https://ifh.cc/g/OSLQPy.jpg">
+            <img src="https://ifh.cc/g/dJ9dqm.jpg">
+        </div>
+    </div>
+
+
+    <div class="principals__massage_m" id="principals__massage">
+        <p><strong>Principal's message</strong></p><br>
+
+        <strong>Welcome to the Gloria School Homepage!!</strong><br><br>
+        Gloria School is a small school that started with one class 
+        in the first year of 2016, but it is a happy community where 
+        all students are studying healthy and happily.<br><br><br>
+
+        <strong> WE HAVE A DREAM!</strong><br><br>
+
+        THE FIRST is to educate all students at Gloria School to become wise people. 
+        So it is to make them a person who will not succumb to any adversity.<br><br>
+
+        THE SECOND is to educate all students at Gloria School to be faithful people. 
+        So it is to make Bangladesh is full of faithful people.<br><br>
+
+        THE THIRD is to educate all students at Gloria School to be people who love their neighbors. 
+        So it is to make Bangladesh a happy country.<br><br>
+
+        FINALLY, to educate all students at Gloria School to become competent people. 
+        So it is to make  Bangladesh a prosperous country in the world.<br><br>
+
+        To make this dream come true, all of our teachers and staff will effort together as one.<br><br>
+        Please pray together to make this dream come true.<br><br>
+
+        <div class="end_m">PRINCIPAL<br>John Seo</div>
+    </div>
+
+    <div class="quick-menu-cover_m">
+        <div class="quick-menu-title_m">Quick Menu</div>
+        <button onclick="location.href='yearbook.html'" class="quick-menu_m">
+            <a>Yearbook</a>
+        </button>
+
+        <button onclick="location.href='#!'" class="quick-menu_m">
+            <a>School News</a>
+        </button>
+
+        <button onclick="location.href='#!'" class="quick-menu_m">
+            <a>School Life</a>
+        </button>
+
+        <div class="quick-menu-end-line_m"></div>
+    </div>
+
+
+        <div class="adinfo_m" id="adinfo">
+            <strong>Admission Fee:</strong><br>
+            1000TK<br><br>
+            <strong>Monthly Fee:</strong><br>
+            300TK<br><br>
+            <strong>From Gloria School Kindergarten:</strong><br>
+            Admission fee: 500TK<br>
+            Monthly fee: 300TK<br><br>
+            <strong>Two or more children attending this school:</strong><br>
+            Admission fee: 500TK<br>
+            Monthly fee: 300TK<br><br><br><br><br>
+
+            <strong>E-mail</strong><br>
+            jeonghyuks@gmail.com<br><br>
+            <strong>Address</strong><br>
+            35 Rajabari, Thana Road, Kamarpara, Turag, Dhaka-1230<br><br>
+            <strong>office</strong><br>
+            +8801323723256<br>
+        </div>
+
+        
+        <div class="calendar_m" id="calendar">
+            <h1 style="color: black;">School Event</h1><br>
+            <ul>
+                <li class="school-event_m">
+                    <a class="date_m">01.01</a>
+                    <a class="event_m">example1</a>
+                </li>
+
+                <li class="school-event_m">
+                    <a class="date_m">01.02</a>
+                    <a class="event_m">example2</a>
+                </li>
+
+                <li class="school-event_m">
+                    <a class="date_m">01.03</a>
+                    <a class="event_m">example3</a>
+                </li>
+
+                <li class="school-event_m">
+                    <a class="date_m">01.04</a>
+                    <a class="event_m">example4</a>
+                </li>
+
+                <li class="school-event_m">
+                    <a class="date_m">01.05</a>
+                    <a class="event_m">example5</a>
+                </li>
+            </ul>
+        </div>
+            
+        <footer class="footer_m">
+            <div class="con_m">
+                <br>
+                <a class="footer-title_m">G L O R I AㅤS C H O O L</a>
+            </div>
+            <br>
+            <div class="footer-line_m"></div>
+            <div class="footer-contents_m">
+                <div>
+                    <br>
+                    <br>
+                    <a>35 Rajabari, Thana Road, Kamarpara, Turag, Dhaka-1230
+                        <br>
+                        TEL.+8801323723256
+                    </a>
+                </div>
+            </div>
+            <a class="top_m" href="#">TOP</a>
+        </footer>
+</div>
+
+</body>
+</html>
